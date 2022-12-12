@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { GifItem } from "./GifItem";
 import { getGifs } from "../helpers/getGifs";
 
 export const GifGrid = ({ category }) => {
@@ -28,14 +29,19 @@ export const GifGrid = ({ category }) => {
             {/* <h5>{ counter }</h5>
 
             <button onClick={() => setCounter(counter+1)}>+1</button> */}
-            <ol>
+            <div className="card-grid">
                 {/* tenemos que crear esto li de manera dinamica */}
                 {
-                    images.map( ({ id, title }) => (
-                        <li key={ id}> { title }</li>
+                    images.map( ( image ) => (
+                        <GifItem 
+                            key={ image.id }
+                            // title={ image.title } 
+                            // url={ image.url }
+                            { ...image }
+                        />
                     ))
                 }
-            </ol>
+            </div>
 
         </>
     )
