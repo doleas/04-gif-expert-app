@@ -13,9 +13,13 @@ export const GifGrid = ({ category }) => {
         <>
 
             <h3>{category}</h3>
+            {
+                // isLoading ? ( <h2>Cargando...</h2> ) : null
+                isLoading && ( <h2>Cargando...</h2> )//es una condicion abreviada que siempre cumple 
+            }
+            
 
             {/* <h5>{ counter }</h5>
-
             <button onClick={() => setCounter(counter+1)}>+1</button> */}
             <div className="card-grid">
                 {/* tenemos que crear esto li de manera dinamica */}
