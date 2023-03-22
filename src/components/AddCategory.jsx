@@ -11,6 +11,7 @@ export const AddCategory = ({ onNewCategory }) => {
 
     const onSubmit = (event) => {
         // console.log(event);
+        // console.log('Hola mundo desde el onSubmit');
         //para evitar el refresh del navegador web
         event.preventDefault();
         // console.log(inputValue);
@@ -23,7 +24,7 @@ export const AddCategory = ({ onNewCategory }) => {
 
     return (
         // <div>AddCategory</div>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} aria-label = "form">
             <input
                 type="text"
                 placeholder="Buscar gif"
