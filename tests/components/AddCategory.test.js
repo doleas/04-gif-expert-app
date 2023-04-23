@@ -16,9 +16,9 @@ describe('Prueba AddCategory', () => {
     test('Debe de llamr onNewCategory si el input tiene un valor', () => { 
         
         const inputValue = 'Saitama';
-        // To_Do: ????
+        const onNewCategory = jest.fn();
         //levantamos nuestro sujeto de pruebas
-        render( <AddCategory onNewCategory = { () => {} } /> );
+        render( <AddCategory onNewCategory = { onNewCategory } /> );
         //la referencia al input y la referencia al formulario
         const input = screen.getByRole('textbox');
         const form  = screen.getByRole('form');
@@ -28,5 +28,7 @@ describe('Prueba AddCategory', () => {
         fireEvent.submit( form );
         // screen.debug();
         expect( input.value ).toBe('');
+        //evaluamos que la funcion haya sido llamada
+        expect( onNewCategory ).toHaveBeenCalled;
     });
 });
